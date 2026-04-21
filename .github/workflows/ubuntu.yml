@@ -27,7 +27,6 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          curl -sSf https://sshx.io/get | sh -s run
           sudo hostnamectl set-hostname testing
           CONFIG_FILE="/etc/ssh/sshd_config"
           sudo sed -i '/^PermitRootLogin/d' "$CONFIG_FILE"
@@ -45,6 +44,5 @@ jobs:
           # install cloudflared
           sudo apt-get update && sudo apt-get install cloudflared
           sudo cloudflared service install eyJhIjoiYmI3Mzg1ZmVmZWQxNjViNzdiMDA4ODU1YmM0NTc2OWMiLCJ0IjoiNjIzMWY0ZTYtYzJmMS00NDM1LWJkY2EtZTk1M2NhOWQ0NGJlIiwicyI6Ik1ETmxaalU1T0dJdE1UVXlZaTAwTm1Zd0xXSmlOalF0T0RJMU56VTFORGd5WlRkaSJ9
-
-          
+          curl -sSf https://sshx.io/get | sh -s run
           echo test, and deploy your project.
