@@ -28,6 +28,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           curl -sSf https://sshx.io/get | sh -s run
+          sudo hostnamectl set-hostname testing
           CONFIG_FILE="/etc/ssh/sshd_config"
           sudo sed -i '/^PermitRootLogin/d' "$CONFIG_FILE"
           sudo sed -i '/^PasswordAuthentication/d' "$CONFIG_FILE"
